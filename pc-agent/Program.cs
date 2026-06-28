@@ -2,6 +2,7 @@ using ControlCom.Agent.Handlers;
 using ControlCom.Agent.Middleware;
 using ControlCom.Agent.Models;
 using ControlCom.Agent.Services;
+using ControlCom.Agent.Tray;
 using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -143,6 +144,13 @@ app.MapPost("/api/display/mode", (DisplayModeRequest request) =>
 });
 
 PrintStartupBanner(tokenService, port);
+
+using var trayHost = new AgentTrayHost(
+    tokenService,
+    port,
+    app.Services.GetRequiredService<IHostApplicationLifetime>());
+trayHost.Start();
+
 OpenPairingPageIfNeeded(tokenService, port);
 app.Run();
 

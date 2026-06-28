@@ -7,7 +7,7 @@
     <RootNamespace>ControlCom.Agent</RootNamespace>
     <AssemblyName>ControlCom.Agent</AssemblyName>
     <OutputType>WinExe</OutputType>
-    <UseWindowsForms>false</UseWindowsForms>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>

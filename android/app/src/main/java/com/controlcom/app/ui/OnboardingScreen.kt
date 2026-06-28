@@ -79,8 +79,8 @@ fun OnboardingScreen(
 
         Text("1단계: PC에 설치", fontWeight = FontWeight.SemiBold, fontSize = 18.sp)
         Text(
-            "PC에서 아래 버튼을 눌러 설치 페이지를 연 뒤, 안내에 따라 설치하세요. " +
-                "완료되면 PC 화면에 페어링 QR이 나타납니다.",
+            "PC에서 아래 버튼을 눌러 설치한 뒤, 작업 표시줄 숨겨진 아이콘(^)에서 " +
+                "ControlCom → 페어링 QR 열기를 선택하세요.",
             lineHeight = 22.sp
         )
         Button(
