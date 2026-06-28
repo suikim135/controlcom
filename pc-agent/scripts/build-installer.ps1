@@ -15,10 +15,5 @@ if (-not $iscc) {
     exit 0
 }
 
-# Copy firewall script into publish for installer
-$scriptsDest = Join-Path $root "publish\scripts"
-New-Item -ItemType Directory -Force -Path $scriptsDest | Out-Null
-Copy-Item (Join-Path $root "scripts\add-firewall-rule.ps1") $scriptsDest -Force
-
 & $iscc (Join-Path $root "installer\setup.iss")
 Write-Host "Installer: $root\installer\Output\ControlComAgent-Setup.exe" -ForegroundColor Green
