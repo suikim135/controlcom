@@ -39,7 +39,7 @@ Source: "..\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs cr
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\페어링 QR 열기"; Filename: "http://localhost:7847/pair"
-Name: "{autostart}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: autostart
+Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: autostart
 
 [Run]
 ; Windows 방화벽 (PowerShell 대신 netsh — 설치 프로그램 표준 방식)
