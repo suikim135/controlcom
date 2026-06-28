@@ -58,37 +58,41 @@ fun OnboardingScreen(
     ) {
         Text("ControlCom 시작하기", fontSize = 28.sp, fontWeight = FontWeight.Bold)
         Text(
-            "PC를 침대에서 조종하려면 Windows에 ControlCom Agent가 필요합니다.",
+            "폰으로 PC를 조종하려면 Windows에 ControlCom 동반 프로그램이 필요합니다. " +
+                "Spotify·Discord PC 앱처럼 한 번만 설치하면 됩니다.",
             lineHeight = 24.sp
         )
 
         Text(
-            "보안 안내",
+            "안전하게 쓰는 방법",
             fontWeight = FontWeight.SemiBold,
             fontSize = 16.sp
         )
         Text(
-            "• 같은 Wi-Fi(LAN)에서만 연결됩니다\n" +
+            "• 같은 Wi-Fi에서만 연결됩니다\n" +
                 "• 외부 서버로 데이터를 보내지 않습니다\n" +
-                "• 페어링한 기기만 PC를 제어할 수 있습니다\n" +
-                "• 공유기 포트포워딩은 하지 마세요",
+                "• 페어링한 폰만 PC를 제어할 수 있습니다",
             fontSize = 14.sp,
             lineHeight = 22.sp,
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.85f)
         )
 
-        Text("1단계: PC 프로그램 설치", fontWeight = FontWeight.SemiBold, fontSize = 18.sp)
-        Text("공식 다운로드 페이지에서 Windows 설치 파일을 받아 실행하세요. 설치 후 페어링 QR 화면이 열립니다.")
+        Text("1단계: PC에 설치", fontWeight = FontWeight.SemiBold, fontSize = 18.sp)
+        Text(
+            "PC에서 아래 버튼을 눌러 설치 페이지를 연 뒤, 안내에 따라 설치하세요. " +
+                "완료되면 PC 화면에 페어링 QR이 나타납니다.",
+            lineHeight = 22.sp
+        )
         Button(
             onClick = {
                 context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(AppConfig.PC_DOWNLOAD_URL)))
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("PC 프로그램 다운로드")
+            Text("PC에 ControlCom 설치하기")
         }
 
-        Text("2단계: 연결", fontWeight = FontWeight.SemiBold, fontSize = 18.sp)
+        Text("2단계: 폰과 연결", fontWeight = FontWeight.SemiBold, fontSize = 18.sp)
         Button(
             onClick = {
                 scanLauncher.launch(
