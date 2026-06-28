@@ -4,3 +4,4 @@
 *.user
 dist/
 compilelog.txt
+pc-agent/installer/Output/
